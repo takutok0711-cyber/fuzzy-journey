@@ -53,7 +53,7 @@
 # SMP parallel job
 #
     touch $TMP
-    echo "%NprocShared=$SLURM_JOB_CPUS_PER_NODE" >> $TMP
+    echo "%NprocShared=$OMP_NUM_THREADS" >> $TMP
     grep -v -i nproc $INP >> $TMP
     mv $TMP $INP
 #
